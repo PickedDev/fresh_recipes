@@ -1,5 +1,6 @@
 import './App.css';
 
+
 import Header from './components/ui/Header'
 import Footer from './components/ui/Footer'
 
@@ -11,6 +12,7 @@ function App() {
         12121
       </main>
       <Footer/>
+
     </div>
   );
 }

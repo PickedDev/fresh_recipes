@@ -191,4 +191,11 @@ export default function Header() {
     </div>
     
   );
+<<<<<<< HEAD
 }
+=======
+}
+
+
+export default Header;
+>>>>>>> 3e778683a2e85180965f7aa62d1cae9a3447e004
