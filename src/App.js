@@ -2,14 +2,15 @@ import './App.css';
 
 
 import Header from './components/ui/Header'
-import Footer from './components/ui/Footer'
+import SignIn from './components/ui/SignIn'
+import Footer from './components/ui/footer/Footer'
 
 function App() {
   return (
     <div className="wrapper">       
       <Header/> 
       <main>
-        12121
+       <SignIn/>
       </main>
       <Footer/>
 

@@ -16,6 +16,7 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
 import { FaUserTimes } from "react-icons/fa";
+import {SignIn} from './SignIn'
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -186,16 +187,10 @@ export default function Header() {
           </div>
         </Toolbar>
       </AppBar>
+      
       {renderMobileMenu}
       {renderMenu}
     </div>
     
   );
-<<<<<<< HEAD
 }
-=======
-}
-
-
-export default Header;
->>>>>>> 3e778683a2e85180965f7aa62d1cae9a3447e004
