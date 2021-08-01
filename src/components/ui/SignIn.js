@@ -13,6 +13,9 @@ import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import sandClock from '../img/sandClock.jpg'
+import passwordClock from '../img/passwordClock.jpg'
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -52,8 +55,12 @@ export default function SignIn() {
     event.preventDefault();
   };
     return (
+      <div>
+        <p>  Sign In Form</p>
         <div>
-      <p>  Sign In Form</p>
+      <p>  Welcome back! </p>
+      <span>Please enter your accounts here </span> 
+        </div>
         <Formik
             initialValues={{ email: '', password: '' }}
             validate={values => {
@@ -84,7 +91,9 @@ export default function SignIn() {
                 isSubmitting,
                 /* and other goodies */
             }) => (
+             
                 <form onSubmit={handleSubmit}>
+                  
                 <InputLabel 
                     type="email"
                     name="email"
@@ -92,8 +101,23 @@ export default function SignIn() {
                     onBlur={handleBlur}
                     value={values.email}
                 />
+                <img src={sandClock} />
+             
+                  <Input
+                    type="email"
+                    name="email"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    id="standard-adornment-password"
+                    // type={values.email ? 'text' : 'email'}
+                    // value={values.password}
+                    onChange={handleChange('email')}                   
+                  />
                 {errors.email && touched.email && errors.email}
                 <InputLabel htmlFor="standard-adornment-password"/>
+                <img src={passwordClock} />
+                
                 <Input
                     type="password"
                     name="password"
@@ -117,13 +141,43 @@ export default function SignIn() {
                     }
                   />
                 {errors.password && touched.password && errors.password}
+                <div>Forgot password?</div>
                 <button type="submit" disabled={isSubmitting}>
-                    Submit
+                    Login
                 </button>
                 </form>
-            )}
-            </Formik>
-        </div>
-        
+                      )}
+              </Formik>
+              <Formik   
+         
+            onSubmit={(values, { setSubmitting }) => {
+                setTimeout(() => {
+                alert(JSON.stringify(values, null, 2));
+                setSubmitting(false);
+                }, 400);
+            }}
+            >
+            {({              
+                isSubmitting,
+                /* and other goodies */
+            }) => (
+                <div className='GoogleAuth'>
+                  <div>
+                    Or continue with
+                  </div>
+                  <button type="submit" disabled={isSubmitting}>
+                      Google
+                  </button>
+                  <div>
+                    Don’t have any account? <a href='#'>Sign up</a>
+                  </div>
+                </div>
+                )}
+              </Formik>
+
+               
+      
+          
+      </div>
     )
 }
