@@ -16,8 +16,10 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
 import { FaUserTimes } from "react-icons/fa";
+import Link from "@material-ui/core/Link";
 import {SignIn} from './SignIn'
-
+const blueColor = '#2DBECD';
+const greenColor = '#51D596';
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -32,6 +34,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   search: {
+    // flexGrow:'1',
+
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
@@ -42,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
+      margin:'0 auto',
+      // marginLeft: theme.spacing(3),
       width: 'auto',
     },
   },
@@ -65,14 +70,44 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create('width'),
     width: '100%',
     [theme.breakpoints.up('md')]: {
-      width: '20ch',
+      width: '25ch',
     },
   },
   sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
       display: 'flex',
+      alignItems:'center',    
     },
+  },
+  headerButtons:{
+    backgroundColor:blueColor,
+    borderRadius: '10px',
+    fontSize:'14px',
+    padding: '6px 8px',
+    textTransform: 'none',
+    marginLeft: '10px',
+    color: '#1B1B25',
+    fontWeight: '700',
+   
+  },
+  headerIcon:{
+    fill: '#1B1B25',
+    width: '20px',
+    // fontSize: '14px',
+    // fontFamily: 'Roboto,sans-serif',
+  },
+  leftHeader:{
+    flexGrow:'1',
+    display: 'flex',
+    alignItems:'center',
+  },
+  logo:{
+    flexGrow: '0',
+    display: 'flex',
+  },
+  searchFiels:{
+    flexGrow: '0',
   },
   sectionMobile: {
     display: 'flex',
@@ -80,6 +115,20 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
   },
+  btnText:{
+    padding:'0 0 0 5px ',
+  },
+  headerLink:{
+    margin:'0 20px 0 50px',
+    color: '#fff',
+    fontSize: '20px',
+    textDecoration: 'none',
+    display:'flex' ,
+    alignItems: 'center',
+  },
+  toolbar:{
+    backgroundColor:greenColor,
+  }
 }));
 
 export default function Header() {
@@ -141,37 +190,64 @@ export default function Header() {
   return (
     <div className={classes.grow}>
       <AppBar position="static">
-        <Toolbar>         
-          <Typography className={classes.title} variant="h6" noWrap>
-          Fresh Recipes
-          </Typography>
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
+        <Toolbar className={classes.toolbar}>         
+            <div className={classes.leftHeader}>
+              <div className={classes.logo}>
+                <Typography className={classes.title} variant="h6" noWrap>
+                Fresh Recipes
+                </Typography>
+              
+                <Link href="/" className={classes.headerLink}>
+                Home  
+                </Link>
+            
+              </div>
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search…"
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </div>
             </div>
-            <InputBase
-              placeholder="Search…"
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-          <Button color="inherit">Login  <FaUserTimes/></Button>
-          <Button color="inherit">Sign Up</Button>
+            {/* <div className={classes.grow} /> */}
+            <div className={classes.sectionDesktop}>
+            <Button className={classes.headerButtons} color="inherit">             
+              <FaUserTimes className={classes.headerIcon}/>
+              <Link href="/sign-in" > 
+                <span className={classes.btnText}>
+                  Login 
+                </span>    
+                </Link>
+
+              </Button>
+          
+          {/* <Button color="inherit"> 
+           
+          </Button> */}
          
-            <IconButton
+          <IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
+              // onClick={handleProfileMenuOpen}
               color="inherit"
+              className={classes.headerButtons}
             >
-              <AccountCircle />
+                <AccountCircle className={classes.headerIcon} />
+                <Link href="/sign-up" >
+                  <span className={classes.btnText}>
+                    Sign Up 
+                    
+                    </span>          
+                </Link>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

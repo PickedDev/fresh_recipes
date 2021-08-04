@@ -13,6 +13,7 @@ import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
+import Link from "@material-ui/core/Link";
 import sandClock from '../img/sandClock.jpg'
 import passwordClock from '../img/passwordClock.jpg'
 
@@ -147,37 +148,7 @@ export default function SignIn() {
                 </button>
                 </form>
                       )}
-              </Formik>
-              <Formik   
-         
-            onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                alert(JSON.stringify(values, null, 2));
-                setSubmitting(false);
-                }, 400);
-            }}
-            >
-            {({              
-                isSubmitting,
-                /* and other goodies */
-            }) => (
-                <div className='GoogleAuth'>
-                  <div>
-                    Or continue with
-                  </div>
-                  <button type="submit" disabled={isSubmitting}>
-                      Google
-                  </button>
-                  <div>
-                    Don’t have any account? <a href='#'>Sign up</a>
-                  </div>
-                </div>
-                )}
-              </Formik>
-
-               
-      
-          
+              </Formik>                                     
       </div>
     )
 }

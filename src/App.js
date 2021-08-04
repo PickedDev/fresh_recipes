@@ -1,20 +1,22 @@
-import './App.css';
-
+import React from 'react';
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from "./routes/Router";
 
 import Header from './components/ui/Header'
-import SignIn from './components/ui/SignIn'
-import SignUp from './components/ui/SignUp'
 import Footer from './components/ui/footer/Footer'
+import './App.css';
+
 
 function App() {
   return (
     <div className="wrapper">
-      <Header />
-      <main>
-        <SignUp />
-      </main>
-      <Footer />
-
+      <Router>
+        <Header />
+        <main>
+          <Routes />
+        </main>
+        <Footer />
+      </Router>
     </div>
   );
 }

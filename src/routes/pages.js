@@ -1,9 +1,9 @@
-import Home from "../components/Home";
-import SignIn from "../components/user/SignIn";
-import SignUp from "../components/user/SignUp";
-import Recipe from "../components/Recipe";
-import RecipeNew from "../components/RecipeNew";
-import RecipeEdit from "../components/RecipeEdit";
+import Home from "../components/ui/Home";
+import SignIn from "../components/ui/SignIn";
+import SignUp from "../components/ui/SignUp";
+import Recipe from "../components/ui/Recipe";
+import RecipeNew from "../components/ui/RecipeNew";
+import RecipeEdit from "../components/ui/RecipeEdit";
 
 const pages = [
     {
