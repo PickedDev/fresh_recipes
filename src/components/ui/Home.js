@@ -13,6 +13,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexWrap: 'wrap',
         background: '#9FA5C0',
+        margin: '10px,0',
     },
     title:{
         fontWeight:'700',
