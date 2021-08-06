@@ -1,7 +1,9 @@
 import React from 'react'
+import {useEffect ,useState} from "react";
 import { fade, makeStyles } from '@material-ui/core/styles';
 import Time from '../img/time.svg'
 import Dish from '../img/dish.svg'
+import Button from '@material-ui/core/Button';
 const useStyles = makeStyles((theme) => ({
     container: {
       maxWidth: '1920px',
@@ -31,7 +33,8 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         background: '#51D496',
         color: '#FFFFFF',
-        borderRadius: '0 0 10px 10px'
+        borderRadius: '0 0 10px 10px',
+        width: '100%',
     },
     Item:{
         display: "inline-block",
@@ -94,142 +97,69 @@ const useStyles = makeStyles((theme) => ({
     // },
     images:{
         padding : '0 10px 0 0',
-    }
+    },
+    // "thumbnail & + title":{
+
+    // }
 }));
 
 
 export default function Home() {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+    useEffect(()=>{
+        fetch("../data.json")
+        .then(res => res.json())
+            .then((result) => {
+                setIsLoaded(true);
+                setItems(result)
+            }
+        )
+    },[])
     const classes = useStyles();
+    if (error) {
+        return <div>Ошибка: {error.message}</div>;
+      } else if (!isLoaded) {
+        return <div>Загрузка...</div>;
+      } else {
     return (
         <div className={classes.container}>
-        {/* <div className={classes.titleWrapper}>   */}
             <h1 className={classes.title}>Your personal recipes </h1>
-        {/* </div> */}
-        <div className={classes.thumbsWrapper}>
-          {/* <div className={classes.marginFix}> */}
-                <div className={classes.Item}>                                    
-                        <div className={classes.ImgWarpper}>
-                            <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
-                        </div>   
-                        <div className={classes.thumbText}>
-                            <strong className={classes.thumbTitle}>  Recipe name  </strong>
-                            <div className={classes.textItem}> 
-                                <img src={Time} alt="" className={classes.images}/>
-                                <span>
-                                    6 hours
-                                </span>
-    
-                            </div>
-                            <div className={classes.textItem}> 
-                                <img src={Dish} alt="" className={classes.images} />
-                                <span>
-                                  Картошка, масло, курица, капуста 
-                                </span>
-                            </div>
-                        </div>        
-                        <a href='https://placeholder.com/' className={classes.thumbsLink}>   
-                            Открыть
-                        </a>
+            <div className={classes.thumbsWrapper}>
+            {items.map(item => (   
+                <div className={classes.Item}  key={item.id}>                                    
+                    <div className={classes.ImgWarpper}>
+                        <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
+                    </div>   
+                    <div className={classes.thumbText}>
+                        <strong className={classes.thumbTitle}>  Recipe name  </strong>
+                    <div className={classes.textItem}> 
+                    <img src={Time} alt="" className={classes.images}/>
+                    <span>
+                        6 hours
+                    </span>
+
+                    </div>
+                    <div className={classes.textItem}> 
+                    <img src={Dish} alt="" className={classes.images} />
+                    <span>
+                    Картошка, масло, курица, капуста 
+                    </span>
+                    </div>
+                    </div>    
+                    <Button variant="contained" color="secondary" className={classes.thumbsLink}>
+                    Открыть
+                    </Button>    
+                    {/* <a href='https://placeholder.com/' className={classes.thumbsLink}>   
+                    Открыть
+                    </a> */}
                 </div>
-                <div className={classes.Item}>                                    
-                        <div className={classes.ImgWarpper}>
-                            <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
-                        </div>   
-                        <div className={classes.thumbText}>
-                            <strong className={classes.thumbTitle}>  Recipe name  </strong>
-                            <div className={classes.textItem}> 
-                                <img src={Time} alt="" />
-                                <span>
-                                    6 hours
-                                </span>
-    
-                            </div>
-                            <div className={classes.textItem}> 
-                                <img src={Dish} alt="" />
-                                <span>
-                                  Картошка, масло, курица, капуста 
-                                </span>
-                            </div>
-                        </div>        
-                        <a href='https://placeholder.com/' className={classes.thumbsLink}>   
-                            Открыть
-                        </a>
-                </div>
-                <div className={classes.Item}>                                    
-                        <div className={classes.ImgWarpper}>
-                            <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
-                        </div>   
-                        <div className={classes.thumbText}>
-                            <strong className={classes.thumbTitle}>  Recipe name  </strong>
-                            <div className={classes.textItem}> 
-                                <img src={Time} alt="" />
-                                <span>
-                                    6 hours
-                                </span>
-    
-                            </div>
-                            <div className={classes.textItem}> 
-                                <img src={Dish} alt="" />
-                                <span>
-                                  Картошка, масло, курица, капуста 
-                                </span>
-                            </div>
-                        </div>        
-                        <a href='https://placeholder.com/' className={classes.thumbsLink}>   
-                            Открыть
-                        </a>
-                </div>
-                <div className={classes.Item}>                                    
-                        <div className={classes.ImgWarpper}>
-                            <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
-                        </div>   
-                        <div className={classes.thumbText}>
-                            <strong className={classes.thumbTitle}>  Recipe name  </strong>
-                            <div className={classes.textItem}> 
-                                <img src={Time} alt="" />
-                                <span>
-                                    6 hours
-                                </span>
-    
-                            </div>
-                            <div className={classes.textItem}> 
-                                <img src={Dish} alt="" />
-                                <span>
-                                  Картошка, масло, курица, капуста 
-                                </span>
-                            </div>
-                        </div>        
-                        <a href='https://placeholder.com/' className={classes.thumbsLink}>   
-                            Открыть
-                        </a>
-                </div>
-                <div className={classes.Item}>                                    
-                        <div className={classes.ImgWarpper}>
-                            <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
-                        </div>   
-                        <div className={classes.thumbText}>
-                            <strong className={classes.thumbTitle}>  Recipe name  </strong>
-                            <div className={classes.textItem}> 
-                                <img src={Time} alt="" />
-                                <span>
-                                    6 hours
-                                </span>
-    
-                            </div>
-                            <div className={classes.textItem}> 
-                                <img src={Dish} alt="" />
-                                <span>
-                                  Картошка, масло, курица, капуста 
-                                </span>
-                            </div>
-                        </div>        
-                        <a href='https://placeholder.com/' className={classes.thumbsLink}>   
-                            Открыть
-                        </a>
-                </div>
-          {/* </div> */}
+                ))}
+            </div>
         </div>
           
-        </div>
+        
     )
+}
 }
