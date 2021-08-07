@@ -21,16 +21,16 @@ const pages = [
         component: SignIn,
     },
     {
-        path: '/recipe/:id',
-        component: Recipe,
+        path: '/recipe/new',
+        component: RecipeNew,
     },
     {
         path: '/recipe/:id/edit',
         component: RecipeEdit,
     },
     {
-        path: '/recipe/new',
-        component: RecipeNew,
+        path: '/recipe/:id',
+        component: Recipe,
     },
 ];
 

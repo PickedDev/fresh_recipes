@@ -199,7 +199,11 @@ export default function Header() {
                 </Typography>
               
                 <Link to="/" className={classes.headerLink}>
-                  Home  
+                  Главная  
+                </Link>
+
+                <Link to="/recipe/new" className={classes.headerLink}>
+                  Добавить рецепт  
                 </Link>
             
               </div>
