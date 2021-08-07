@@ -4,6 +4,8 @@ import SignUp from "../components/ui/SignUp";
 import Recipe from "../components/ui/Recipe";
 import RecipeNew from "../components/ui/RecipeNew";
 import RecipeEdit from "../components/ui/RecipeEdit";
+import Header from "../components/ui/Header";
+import Footer from "../components/ui/footer/Footer";
 
 const pages = [
     {
@@ -11,7 +13,7 @@ const pages = [
         component: Home,
     },
     {
-        path: '/sign-up/',
+        path: '/sign-up',
         component: SignUp,
     },
     {

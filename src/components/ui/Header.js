@@ -158,35 +158,35 @@ export default function Header() {
   };
 
   const menuId = 'primary-search-account-menu';
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
-  );
+  // const renderMenu = (
+  //   <Menu
+  //     anchorEl={anchorEl}
+  //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+  //     id={menuId}
+  //     keepMounted
+  //     transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+  //     open={isMenuOpen}
+  //     onClose={handleMenuClose}
+  //   >
+  //     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+  //     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+  //   </Menu>
+  // );
 
-  const mobileMenuId = 'primary-search-account-menu-mobile';
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
+  // const mobileMenuId = 'primary-search-account-menu-mobile';
+  // const renderMobileMenu = (
+  //   <Menu
+  //     anchorEl={mobileMoreAnchorEl}
+  //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+  //     id={mobileMenuId}
+  //     keepMounted
+  //     transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+  //     open={isMobileMenuOpen}
+  //     onClose={handleMobileMenuClose}
+  //   >
      
-    </Menu>
-  );
+  //   </Menu>
+  // );
 
   return (
     <div className={classes.grow}>
@@ -195,11 +195,11 @@ export default function Header() {
             <div className={classes.leftHeader}>
               <div className={classes.logo}>
                 <Typography className={classes.title} variant="h6" noWrap>
-                Fresh Recipes
+                  Fresh Recipes
                 </Typography>
               
                 <Link to="/" className={classes.headerLink}>
-                Home  
+                  Home  
                 </Link>
             
               </div>
@@ -218,7 +218,7 @@ export default function Header() {
               </div>
             </div>
             {/* <div className={classes.grow} /> */}
-            <div className={classes.sectionDesktop}>
+          <div className={classes.sectionDesktop}>
             <Button className={classes.headerButtons} color="inherit">             
               <FaUserTimes className={classes.headerIcon}/>
               <Link to="/sign-in" > 
@@ -228,11 +228,11 @@ export default function Header() {
               </Link>
             </Button>
           
-          {/* <Button color="inherit"> 
-           
-          </Button> */}
+            {/* <Button color="inherit"> 
+            
+            </Button> */}
          
-          <IconButton
+              <IconButton
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
@@ -250,22 +250,22 @@ export default function Header() {
                 </Link>
             </IconButton>
           </div>
-          <div className={classes.sectionMobile}>
+          {/* <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"
-              aria-controls={mobileMenuId}
+              // aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
               <MoreIcon />
             </IconButton>
-          </div>
+          </div> */}
         </Toolbar>
       </AppBar>
       
-      {renderMobileMenu}
-      {renderMenu}
+      {/* {renderMobileMenu} */}
+      {/* {renderMenu} */}
     </div>
     
   );

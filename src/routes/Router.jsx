@@ -9,13 +9,11 @@ import pages from "./pages";
 
 const Routes = () => {
     return (
-        <Router>
             <Switch>
                 {pages.map(page => (
                     <Route path={page.path} component={page.component} exact />
                 ))}
             </Switch>
-        </Router>
     );
 };
 
