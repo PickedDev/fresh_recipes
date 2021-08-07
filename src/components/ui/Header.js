@@ -16,8 +16,9 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Button from '@material-ui/core/Button';
 import { FaUserTimes } from "react-icons/fa";
-import Link from "@material-ui/core/Link";
-import {SignIn} from './SignIn'
+import { Link } from "react-router-dom";
+
+
 const blueColor = '#2DBECD';
 const greenColor = '#51D596';
 const useStyles = makeStyles((theme) => ({
@@ -197,7 +198,7 @@ export default function Header() {
                 Fresh Recipes
                 </Typography>
               
-                <Link href="/" className={classes.headerLink}>
+                <Link to="/" className={classes.headerLink}>
                 Home  
                 </Link>
             
@@ -220,13 +221,12 @@ export default function Header() {
             <div className={classes.sectionDesktop}>
             <Button className={classes.headerButtons} color="inherit">             
               <FaUserTimes className={classes.headerIcon}/>
-              <Link href="/sign-in" > 
+              <Link to="/sign-in" > 
                 <span className={classes.btnText}>
                   Login 
                 </span>    
-                </Link>
-
-              </Button>
+              </Link>
+            </Button>
           
           {/* <Button color="inherit"> 
            
@@ -242,7 +242,7 @@ export default function Header() {
               className={classes.headerButtons}
             >
                 <AccountCircle className={classes.headerIcon} />
-                <Link href="/sign-up" >
+                <Link to="/sign-up" >
                   <span className={classes.btnText}>
                     Sign Up 
                     

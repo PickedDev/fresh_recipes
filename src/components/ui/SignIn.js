@@ -59,8 +59,8 @@ export default function SignIn() {
       <div>
         <p>  Sign In Form</p>
         <div>
-      <p>  Welcome back! </p>
-      <span>Please enter your accounts here </span> 
+          <p>  Welcome back! </p>
+          <span>Please enter your accounts here </span> 
         </div>
         <Formik
             initialValues={{ email: '', password: '' }}
@@ -92,7 +92,7 @@ export default function SignIn() {
                 isSubmitting,
                 /* and other goodies */
             }) => (
-             
+            
                 <form onSubmit={handleSubmit}>
                   
                 <InputLabel 
@@ -103,7 +103,7 @@ export default function SignIn() {
                     value={values.email}
                 />
                 <img src={sandClock} />
-             
+            
                   <Input
                     type="email"
                     name="email"
@@ -148,7 +148,7 @@ export default function SignIn() {
                 </button>
                 </form>
                       )}
-              </Formik>                                     
+        </Formik>                                     
       </div>
     )
 }

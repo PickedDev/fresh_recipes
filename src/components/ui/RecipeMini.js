@@ -4,28 +4,21 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import Time from '../img/time.svg'
 import Dish from '../img/dish.svg'
 import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-      maxWidth: '1920px',
-      padding: '0 20px',
-      margin: '0 auto',
-    
-    },
-    thumbsWrapper:{
-        display: 'flex',
-        flexWrap: 'wrap',
-        background: '#9FA5C0',
-        margin: '10px,0',
-    },
-    title:{
-        fontWeight:'700',
+    Item:{
+        display: "inline-block",
         textAlign: 'center',
-        fontSize: '24px',
-        padding: '20px 0',
-        background: '#BDC9B8',
-        border: '1px solid #000000',
+        background: 'transparent',
+        verticalAlign: "top",
+        cursor: "pointer",
+        margin: "2em 1em",
+        width: 'calc(20% - 2em)',               
+        boxShadow: "-1px 1px 5px rgb(207 207 207 / 65%)",
+        // borderRadius: "0 0 5px 5px",
+        backgroundColor: "#ffffff",    
+        borderRadius: '0px 0px 30px 30px',
     },
     thumbsLink:{
         display: "block",
@@ -99,6 +92,11 @@ const preventDefault = (event) => event.preventDefault();
 
 export default function RecipeMini(props) {
     const classes = useStyles();
+
+    const handleClick = (event) => {
+        event.preventDefault();
+    };
+
     return (
         <div className={classes.Item} >                                    
             <div className={classes.ImgWarpper}>
@@ -119,11 +117,9 @@ export default function RecipeMini(props) {
                 </span>
             </div>
             </div>    
-            <Link href="/recipe/1" onClick={preventDefault} variant="body2">
-                <Button variant="contained" color="secondary" className={classes.thumbsLink}>
-                    Открыть
-                </Button>   
-            </Link>                                    
+            <Button variant="contained" color="secondary" className={classes.thumbsLink} to="/recipe/1" component={Link}>
+                Открыть
+            </Button>                     
         </div>
     )
 }
