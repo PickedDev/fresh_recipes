@@ -14,7 +14,6 @@ function App() {
       <Router>
         <Header />
         <main>
-
           <Routes />
         </main>
         <Footer />

@@ -1,10 +1,7 @@
 import React from 'react'
 import {useEffect ,useState} from "react";
 import { fade, makeStyles } from '@material-ui/core/styles';
-import Time from '../img/time.svg'
-import Dish from '../img/dish.svg'
-import Button from '@material-ui/core/Button';
-import Link from '@material-ui/core/Link';
+import RecipeMini from './RecipeMini';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -73,7 +70,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize:" 14px",
         fontWeight: "500",
         height: '20px',
-        // lineHeight: "18px",
         display: "block",
         color: "#000000",
         padding: "10px 0 0",
@@ -92,78 +88,84 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         padding:" 0 10px 5px 10px",
     },
-    // marginFix:{
-    //     margin: "-50px 0 0 -50px",
-    //     fontSize: "0",
-    //     lineHeight: "0",
-    // },
     images:{
         padding : '0 10px 0 0',
     },
-    // "thumbnail & + title":{
-
-    // }
 }));
 
 
 export default function Home() {
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [items, setItems] = useState([]);
+    // const [error, setError] = useState(null);
+    // const [isLoaded, setIsLoaded] = useState(false);
+    const items = [
+        {        
+            "title": "Some dish",
+            "time": "30",
+            "ingridients": "Картошка, масло, курица, капуста ",
+        },
+        {
+            "title": "Some dish",
+            "time": "1,5",
+            "ingridients": "Картошка, масло, курица, капуста",
+        },
+        {
+            "title": "Some dish",
+            "time": "47",
+            "ingridients": "Картошка, масло, курица, капуста",
+        },
+        {
+            "title": "Some dish",
+            "time": "1.83",
+            "ingridients": "Картошка, масло, курица, капуста",
+        },
+        {
+            "title": "Some dish",
+            "time": "1.21",
+            "ingridients": "Картошка, масло, курица, капуста",
+        },
+        {
+            "title": "Some dish",
+            "time": "1.57",
+            "ingridients": "Картошка, масло, курица, капуста",
+        },
+        {
+            "title": "Some dish",
+            "time": "1.45",
+            "ingridients": "Картошка, масло, курица, капуста",
+        },
+        {
+            "title": "Some dish",
+            "time": "1.66",
+            "ingridients": "Картошка, масло, курица, капуста",
+        }
+    ];
     const preventDefault = (event) => event.preventDefault();
-    useEffect(()=>{
-        fetch("../data.json")
+    // useEffect(()=>{
+    //     fetch("../data.json")
      
-        .then(res  => res.json())
+    //     .then(res  => res.json())
    
-            .then((result) => {
-                setIsLoaded(true);
-                setItems(result)
-            }
-        )
-    },[])
+    //         .then((result) => {
+    //             setIsLoaded(true);
+    //             setItems(result)
+    //         }
+    //     )
+    // },[])
     const classes = useStyles();
-    if (error) {
-        return <div>Ошибка: {error.message}</div>;
-      } else if (!isLoaded) {
-        return <div>Загрузка...</div>;
-      } else {
+    // if (error) {
+    //     return <div>Ошибка: {error.message}</div>;
+    //   } else if (!isLoaded) {
+    //     return <div>Загрузка...</div>;
+    //   } else {
     return (
         <div className={classes.container}>
             <h1 className={classes.title}>Your personal recipes </h1>
             <div className={classes.thumbsWrapper}>
-            {items.map(item => (   
-                <div className={classes.Item}  key={item.id}>                                    
-                    <div className={classes.ImgWarpper}>
-                        <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
-                    </div>   
-                    <div className={classes.thumbText}>
-                        <strong className={classes.thumbTitle}> {item.title}  </strong>
-                    <div className={classes.textItem}> 
-                    <img src={Time} alt="" className={classes.images}/>
-                    <span>
-                       {item.time}
-                    </span>
-
-                    </div>
-                    <div className={classes.textItem}> 
-                    <img src={Dish} alt="" className={classes.images} />
-                        <span>
-                            {item.ingridients}
-                        </span>
-                    </div>
-                    </div>    
-                    <Link href="/recipe/{item.id}" onClick={preventDefault} variant="body2">
-                        <Button variant="contained" color="secondary" className={classes.thumbsLink}>
-                            Открыть
-                        </Button>   
-                    </Link>                                    
-                </div>
-                ))}
+            {items.map(item => <RecipeMini { ...item } />)}
             </div>
         </div>
           
         
     )
 }
-}
+//} - from else block
