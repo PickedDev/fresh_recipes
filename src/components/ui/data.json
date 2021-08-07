@@ -1,73 +1,73 @@
 {
     "products": [
         {
-            "id": "Bugatti",
-            "price": "$ 9.12",
+            "title": "Some dish",
+            "time": "30",
             "year": 2011,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста ",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Pontiac",
-            "price": "$ 0.32",
+            "title": "Some dish",
+            "time": "1,5",
             "year": 2006,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Nissan",
-            "price": "$ 0.64",
+            "title": "Some dish",
+            "time": "47",
             "year": 1994,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Saab",
-            "price": "$ 0.83",
+            "title": "Some dish",
+            "time": "1.83",
             "year": 1994,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Kia",
-            "price": "$ 4.21",
+            "title": "Some dish",
+            "time": "1.21",
             "year": 2006,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Chevrolet",
-            "price": "$ 0.57",
+            "title": "Some dish",
+            "time": "1.57",
             "year": 2009,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Volkswagen",
-            "price": "$ 6.45",
+            "title": "Some dish",
+            "time": "1.45",
             "year": 2010,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"
         },
         {
-            "id": "Jaguar",
-            "price": "$ 3.66",
+            "title": "Some dish",
+            "time": "1.66",
             "year": 1995,
-            "description": "ca. 6,7 l/100km (komb.), ca. 179 g CO₂/km (komb.) EZ 06/2009, 200.000 km, 176kW (239 PS) Kombi, Diesel, Automatik",
+            "ingridients": "Картошка, масло, курица, капуста",
             "engine": "Diesel",
             "transmission": "Automatic",
             "speed": "123,46 Mi"

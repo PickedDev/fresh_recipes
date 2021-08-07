@@ -4,6 +4,8 @@ import { fade, makeStyles } from '@material-ui/core/styles';
 import Time from '../img/time.svg'
 import Dish from '../img/dish.svg'
 import Button from '@material-ui/core/Button';
+import Link from '@material-ui/core/Link';
+
 const useStyles = makeStyles((theme) => ({
     container: {
       maxWidth: '1920px',
@@ -108,9 +110,12 @@ export default function Home() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
+    const preventDefault = (event) => event.preventDefault();
     useEffect(()=>{
         fetch("../data.json")
-        .then(res => res.json())
+     
+        .then(res  => res.json())
+   
             .then((result) => {
                 setIsLoaded(true);
                 setItems(result)
@@ -133,27 +138,26 @@ export default function Home() {
                         <img src="https://via.placeholder.com/300x150" alt="" className={classes.Img} />
                     </div>   
                     <div className={classes.thumbText}>
-                        <strong className={classes.thumbTitle}>  Recipe name  </strong>
+                        <strong className={classes.thumbTitle}> {item.title}  </strong>
                     <div className={classes.textItem}> 
                     <img src={Time} alt="" className={classes.images}/>
                     <span>
-                        6 hours
+                       {item.time}
                     </span>
 
                     </div>
                     <div className={classes.textItem}> 
                     <img src={Dish} alt="" className={classes.images} />
-                    <span>
-                    Картошка, масло, курица, капуста 
-                    </span>
+                        <span>
+                            {item.ingridients}
+                        </span>
                     </div>
                     </div>    
-                    <Button variant="contained" color="secondary" className={classes.thumbsLink}>
-                    Открыть
-                    </Button>    
-                    {/* <a href='https://placeholder.com/' className={classes.thumbsLink}>   
-                    Открыть
-                    </a> */}
+                    <Link href="/recipe/{item.id}" onClick={preventDefault} variant="body2">
+                        <Button variant="contained" color="secondary" className={classes.thumbsLink}>
+                            Открыть
+                        </Button>   
+                    </Link>                                    
                 </div>
                 ))}
             </div>
