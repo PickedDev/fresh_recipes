@@ -1,7 +1,8 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import { Button, TextField } from '@material-ui/core';
-import Time from '../img/time.svg'
+import Time from '../img/time.svg';
+import { v4 as uiId } from 'uuid';
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -179,7 +180,11 @@ export default function RecipeNewForm(props) {
     //     setValue(100);
     //   }
     // };
-    const initialValue1 = ["initial-Item"] // needed to be transform in arrays of object like [{title: "string", id: "this will be used for key"}]
+    const initialValue1 = [
+        {
+            id: uiId()
+        }
+    ] // needed to be transform in arrays of object like [{title: "string", id: "this will be used for key"}]
 
     const [ingridientsList, setIngridientList] = React.useState(initialValue1);
     const [stepsList, setStepsList] = React.useState(initialValue1);
@@ -190,16 +195,16 @@ export default function RecipeNewForm(props) {
 
     const handleRemoveIngridientItem = (e) => {
         const id = e.target.id
-        setIngridientList(ingridientsList.filter(item => item !== id));
+        setIngridientList(ingridientsList.filter(item => item.title !== id));
         console.log(`${id}`);
-        console.log(`${ingridientsList}`);
+        stepsList.forEach(item => console.log(`${item.id}`))
     };
     /// problem with Key and Id, need to generate Key even when adding an new list item
     const handleRemoveStepItem = (e) => {
         const id = e.target.id
         setStepsList(stepsList.filter(item => item !== id));
         console.log(`${id}`);
-        console.log(`${stepsList}`);
+        stepsList.forEach(item => console.log(`${item.id}`))
     };
 
 
@@ -270,19 +275,18 @@ export default function RecipeNewForm(props) {
                         </span>
                         <div className={classes.ItemList}>
                             {ingridientsList.map((ingridient, index) =>
-                                <div key={index} className={classes.MappedListItem}>
+                                <div key={uiId()} className={classes.MappedListItem}>
                                     <TextField
                                         className={classes.textField}
-                                        id="outlined-basic"
                                         label={"Напишите ингридиент..."}
                                         variant="outlined" />
                                     <span className={classes.ActionBtn}>
                                         <button onClick={handleRemoveIngridientItem} >
-                                            <svg width="24" height="24" id={`Item-${index}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                                            <svg width="24" height="24" id={ingridient.id} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
                                                 <path d="M19.2 12H4.8" stroke="#2DBECD" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                                             </svg>
                                         </button>
-                                        <button onClick={() => setIngridientList(ingridientsList.concat(`Item-${index + 1}`))}>
+                                        <button onClick={() => setIngridientList(ingridientsList.concat([{ id: uiId() }]))}>
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" >
                                                 <path d="M19.2 12H4.8" stroke="#2DBECD" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                                                 <path d="M12 4.80001V19.2" stroke="#2DBECD" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
@@ -299,17 +303,16 @@ export default function RecipeNewForm(props) {
                         </span>
                         <div className={classes.ItemList}>
                             {stepsList.map((ingridient, index) =>
-                                <div key={new Date.toString} className={classes.MappedListItem}>
+                                <div key={uiId()} className={classes.MappedListItem}>
                                     <TextField
                                         className={classes.textField}
-                                        id="outlined-basic"
                                         label={"Напишите ингридиент..."}
                                         variant="outlined" />
                                     <span className={classes.ActionBtn}>
-                                        <svg width="24" height="24" id={`Item-${index}`} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={handleRemoveStepItem}>
+                                        <svg width="24" height="24" id={ingridient.id} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={handleRemoveStepItem}>
                                             <path d="M19.2 12H4.8" stroke="#2DBECD" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
-                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => setStepsList(stepsList.concat(`Item-${index + 1}`))}>
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={() => setStepsList(stepsList.concat([{ id: uiId() }]))}>
                                             <path d="M19.2 12H4.8" stroke="#2DBECD" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                                             <path d="M12 4.80001V19.2" stroke="#2DBECD" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
