@@ -1,0 +1,17 @@
+# dependencies
+node_modules/
+.yarn/
+
+# production
+build/
+public/
+
+# configs
+tailwind.config.js
+
+# ide
+.vscode/
+
+**/*.js
+*.css
+*.svg
