@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import { Dialog } from '@material-ui/core';
 import InputLabel from '@material-ui/core/InputLabel';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import Input from '@material-ui/core/Input';
 import FilledInput from '@material-ui/core/FilledInput';
@@ -12,27 +12,28 @@ import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-// import { Formik, Form, Field, ErrorMessage } from 'formik';
-import Link from "@material-ui/core/Link";
-import sandClock from '../img/sandClock.jpg'
-import passwordClock from '../img/passwordClock.jpg'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+import Link from '@material-ui/core/Link';
+import sandClock from '../img/sandClock.jpg';
+import passwordClock from '../img/passwordClock.jpg';
 
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-  withoutLabel: {
-    marginTop: theme.spacing(3),
-  },
-  textField: {
-    width: '25ch',
-  },
-}));
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+    },
+    margin: {
+      margin: theme.spacing(1),
+    },
+    withoutLabel: {
+      marginTop: theme.spacing(3),
+    },
+    textField: {
+      width: '25ch',
+    },
+  })
+);
 
 export const SignIn = () => {
   const classes = useStyles();
@@ -44,7 +45,7 @@ export const SignIn = () => {
     showPassword: false,
   });
 
-  const handleChange = (prop) => (event) => {
+  const handleChange = (prop: any) => (event: any) => {
     setValues({ ...values, [prop]: event.target.value });
   };
 
@@ -52,20 +53,22 @@ export const SignIn = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
 
-  const handleMouseDownPassword = (event) => {
+  const handleMouseDownPassword = (event: any) => {
     event.preventDefault();
   };
+
   return (
     <div>
-      <p>  Sign In Form</p>
+      <p> Sign In Form</p>
       <div>
-        <p>  Welcome back! </p>
+        <p> Welcome back! </p>
         <span>Please enter your accounts here </span>
       </div>
-      <Formik // i haven't installed formik so won't work 
+      <Formik // i haven't installed formik so won't work
         initialValues={{ email: '', password: '' }}
-        validate={values => {
-          const errors = {};
+        validate={(values: any) => {
+          const errors = { email: '', password: '' };
+
           if (!values.email) {
             errors.email = 'Required';
           } else if (
@@ -73,9 +76,10 @@ export const SignIn = () => {
           ) {
             errors.email = 'Invalid email address';
           }
+
           return errors;
         }}
-        onSubmit={(values, { setSubmitting }) => {
+        onSubmit={(values: any, { setSubmitting: any }) => {
           setTimeout(() => {
             alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
@@ -92,22 +96,18 @@ export const SignIn = () => {
           isSubmitting,
           /* and other goodies */
         }) => (
-
           <form onSubmit={handleSubmit}>
-
             <InputLabel
-              type="email"
-              name="email"
               onChange={handleChange}
               onBlur={handleBlur}
-              value={values.email}
+              // value={values}
             />
-            <img src={sandClock} />
+            <img src={sandClock} alt={sandClock} />
 
             <Input
               type="email"
               name="email"
-              onChange={handleChange}
+              // onChange={handleChange}
               onBlur={handleBlur}
               value={values.email}
               id="standard-adornment-password"
@@ -117,17 +117,16 @@ export const SignIn = () => {
             />
             {errors.email && touched.email && errors.email}
             <InputLabel htmlFor="standard-adornment-password" />
-            <img src={passwordClock} />
+            <img src={passwordClock} alt={sandClock} />
 
             <Input
-              type="password"
+              // type="password"
               name="password"
-              onChange={handleChange}
+              // onChange={handleChange}
               onBlur={handleBlur}
               value={values.password}
               id="standard-adornment-password"
               type={values.showPassword ? 'text' : 'password'}
-              value={values.password}
               onChange={handleChange('password')}
               endAdornment={
                 <InputAdornment position="end">
@@ -150,5 +149,9 @@ export const SignIn = () => {
         )}
       </Formik>
     </div>
-  )
+  );
+};
+
+function setSubmitting(arg0: boolean) {
+  throw new Error('Function not implemented.');
 }
