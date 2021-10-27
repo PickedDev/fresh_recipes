@@ -30,8 +30,6 @@ export const useStyles = makeStyles((theme?: any) =>
             background: '#9FA5C0',
         },
         recipeImg: {
-            width: '100%',
-            height: '100%',
             border: '2px dashed #D0DBEA',
             borderRadius: '16px',
             position: 'absolute',
@@ -39,6 +37,8 @@ export const useStyles = makeStyles((theme?: any) =>
             bottom: '0',
             left: '0',
             right: '0',
+            width: 100,
+            height: 100,
         },
         recipeImgWrapper: {
             position: 'relative',
@@ -57,6 +57,15 @@ export const useStyles = makeStyles((theme?: any) =>
             fontWeight: 700,
             color: '#3E5481',
         },
+        ItemTitleIngr: {
+            background: '#C4C4C4',
+            border: '1px solid #000000',
+            padding: '10px 15px 10px 15px',
+            fontWeight: 700,
+            color: '#3E5481',
+            display: 'flex',
+            justifyContent: 'space-between',
+        },
         ItemDescription: {
             padding: '30px 0',
             display: 'flex',
@@ -66,6 +75,9 @@ export const useStyles = makeStyles((theme?: any) =>
         },
         images: {
             padding: '0 30px 0 0',
+        },
+        ActionBtn: {
+            marginTop: '2em',
         },
         ingridients: {
             color: '#000',
@@ -78,9 +90,15 @@ export const useStyles = makeStyles((theme?: any) =>
         ingridients2: {
             margin: '30px 0 0 0',
         },
-        ItemLists: {
+        ItemList: {
             display: 'flex',
             flexDirection: 'column',
+        },
+        MappedListItem: {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            paddingTop: '1em',
         },
         Numbers: {
             background: '#3E5481',
@@ -118,6 +136,10 @@ export const useStyles = makeStyles((theme?: any) =>
             fontWeight: 700,
             textTransform: 'inherit',
             margin: '0 10px 0 0',
+        },
+        textField: {
+            marginTop: '1em',
+            width: '80%',
         },
     })
 );

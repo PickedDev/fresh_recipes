@@ -13,31 +13,11 @@ import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import sandClock from '../img/sandClock.jpg';
-import passwordClock from '../img/passwordClock.jpg';
-// const CheckoutIcon = (
-//     asda
-// );
+import sandClock from '../../img/sandClock.jpg';
+import passwordClock from '../../img/passwordClock.jpg';
+import { useStyles } from './styles';
 
 const color = ['black', '#2DBECD'];
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display: 'flex',
-            flexWrap: 'wrap',
-        },
-        margin: {
-            margin: theme.spacing(1),
-        },
-        withoutLabel: {
-            marginTop: theme.spacing(3),
-        },
-        textField: {
-            width: '25ch',
-        },
-    })
-);
 
 export const SignUp = () => {
     const classes = useStyles();

@@ -1,11 +1,11 @@
-import { Home } from '../components/ui/Home';
-import { SignIn } from '../components/ui/SignIn';
-import { SignUp } from '../components/ui/SignUp';
+import { Home } from '../components/ui/Home/Home';
+import { SignIn } from '../components/ui/SignIn/SignIn';
+import { SignUp } from '../components/ui/SignUp/SignUp';
 import { Recipe } from '../components/ui/Recipe/Recipe';
 import { RecipeNew } from '../components/ui/RecipeNew';
 import { RecipeEdit } from '../components/ui/RecipeEdit';
-import { Header } from '../components/ui/Header';
-import { Footer } from '../components/ui/footer/Footer';
+import { Header } from '../components/ui/Header/Header';
+import { Footer } from '../components/ui/Footer/Footer';
 
 const pages = [
     {
