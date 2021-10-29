@@ -42,7 +42,7 @@ export const SignUp = () => {
     };
 
     return (
-        <div>
+        <div className={classes.container}>
             <p> Sign Up Form</p>
             <div>
                 <p> Welcome! </p>

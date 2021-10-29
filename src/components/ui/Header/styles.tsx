@@ -108,6 +108,10 @@ export const useStyles = makeStyles((theme?: any) =>
             textDecoration: 'none',
             display: 'flex',
             alignItems: 'center',
+            [theme.breakpoints.down('xs')]: {
+                margin: '0 10px 0 10px',
+                fontSize: '15px',
+            },
         },
         toolbar: {
             backgroundColor: greenColor,

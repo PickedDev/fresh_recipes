@@ -3,6 +3,10 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { RecipeMini } from '../RecipeMini/RecipeMini';
 import { useStyles } from './styles';
 
+const container = {
+    wrapper: 'grid gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 2xl:gap-10',
+};
+
 export const RecipeBox = (props: { title: any | null | undefined }) => {
     const preventDefault = (event: { preventDefault: () => any }) => event.preventDefault();
     const classes = useStyles();
@@ -50,14 +54,12 @@ export const RecipeBox = (props: { title: any | null | undefined }) => {
     ];
     return (
         <div className={classes.container}>
-            {' '}
-            <h1 className={classes.title}>Your {props.title} recipes </h1>{' '}
-            <div className={classes.thumbsWrapper}>
-                {' '}
+            <h1 className={classes.title}>Your {props.title} recipes </h1>
+            <div className={`${classes.thumbsWrapper} ${container.wrapper}`}>
                 {props.title === 'personal' || props.title === 'family'
                     ? items.map((item: any) => <RecipeMini {...item} />)
-                    : null}{' '}
-            </div>{' '}
+                    : null}
+            </div>
         </div>
     );
 };

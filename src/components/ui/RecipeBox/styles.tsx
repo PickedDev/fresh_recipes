@@ -4,11 +4,18 @@ export const useStyles = makeStyles((theme?: any) =>
     createStyles({
         container: { maxWidth: '1920px', padding: '0 20px', margin: '3em auto' },
         thumbsWrapper: {
-            display: 'flex',
-            flexWrap: 'wrap',
+            // display: 'flex',
+            // flexWrap: 'wrap',
             background: '#9FA5C0',
-            margin: '10px,0',
+            padding: '1.5rem',
+            [theme.breakpoints.up('xl')]: {
+                padding: '2.5rem',
+            },
+            [theme.breakpoints.down('xs')]: {
+                gridTemplateColumns: '1fr',
+            },
         },
+
         title: {
             fontWeight: 700,
             textAlign: 'center',

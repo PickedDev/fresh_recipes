@@ -5,12 +5,15 @@ import { Header } from './components/ui/Header/Header';
 import { Footer } from './components/ui/Footer/Footer';
 import logo from './logo.svg';
 import './App.css';
+import 'tailwindcss/tailwind.css';
 
 function App() {
     return (
         <div className="wrapper">
             <Router>
-                <Header />
+                <div className="grid-cols-1">
+                    <Header />
+                </div>
                 <main>
                     <Routes />
                 </main>
