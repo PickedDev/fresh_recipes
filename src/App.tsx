@@ -6,14 +6,14 @@ import { Footer } from './components/ui/Footer/Footer';
 import logo from './logo.svg';
 import './App.css';
 import 'tailwindcss/tailwind.css';
+import GlobalCssOverride from './GlobalStyles';
 
 function App() {
     return (
         <div className="wrapper">
             <Router>
-                <div className="grid-cols-1">
-                    <Header />
-                </div>
+                <GlobalCssOverride />
+                <Header />
                 <main>
                     <Routes />
                 </main>
