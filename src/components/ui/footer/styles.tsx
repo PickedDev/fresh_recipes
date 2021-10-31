@@ -7,10 +7,10 @@ export const useStyles = makeStyles((theme?: any) =>
             textAlign: 'center',
 
             padding: '20px 0',
-            position: 'absolute',
-            left: 0,
-            bottom: 0,
-            width: '100%',
+            // position: 'absolute',
+            // left: 0,
+            // bottom: 0,
+            // width: '100%',
         },
     })
 );
