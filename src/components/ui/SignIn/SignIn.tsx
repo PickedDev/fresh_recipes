@@ -13,33 +13,12 @@ import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import sandClock from '../img/sandClock.jpg';
-import passwordClock from '../img/passwordClock.jpg';
-// const CheckoutIcon = (
-//     asda
-// );
+import Link from '@material-ui/core/Link';
+import sandClock from '../../img/sandClock.jpg';
+import passwordClock from '../../img/passwordClock.jpg';
+import { useStyles } from './styles';
 
-const color = ['black', '#2DBECD'];
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        root: {
-            display: 'flex',
-            flexWrap: 'wrap',
-        },
-        margin: {
-            margin: theme.spacing(1),
-        },
-        withoutLabel: {
-            marginTop: theme.spacing(3),
-        },
-        textField: {
-            width: '25ch',
-        },
-    })
-);
-
-export const SignUp = () => {
+export const SignIn = () => {
     const classes = useStyles();
     const [values, setValues] = React.useState({
         amount: '',
@@ -63,12 +42,12 @@ export const SignUp = () => {
 
     return (
         <div>
-            <p> Sign Up Form</p>
+            <p> Sign In Form</p>
             <div>
-                <p> Welcome! </p>
+                <p> Welcome back! </p>
                 <span>Please enter your accounts here </span>
             </div>
-            <Formik
+            <Formik // i haven't installed formik so won't work
                 initialValues={{ email: '', password: '' }}
                 validate={(values: any) => {
                     const errors = { email: '', password: '' };
@@ -81,7 +60,7 @@ export const SignUp = () => {
 
                     return errors;
                 }}
-                onSubmit={(values, { setSubmitting }) => {
+                onSubmit={(values: any, { setSubmitting: any }) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2));
                         setSubmitting(false);
@@ -100,17 +79,16 @@ export const SignUp = () => {
                 }) => (
                     <form onSubmit={handleSubmit}>
                         <InputLabel
-                            //   type="email"
-                            //   name="email"
                             onChange={handleChange}
                             onBlur={handleBlur}
-                            //   value={values.email}
+                            // value={values}
                         />
                         <img src={sandClock} alt={sandClock} />
 
                         <Input
                             type="email"
                             name="email"
+                            // onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.email}
                             id="standard-adornment-password"
@@ -120,13 +98,16 @@ export const SignUp = () => {
                         />
                         {errors.email && touched.email && errors.email}
                         <InputLabel htmlFor="standard-adornment-password" />
-                        <img src={passwordClock} alt={passwordClock} />
+                        <img src={passwordClock} alt={sandClock} />
 
                         <Input
+                            // type="password"
+                            name="password"
+                            // onChange={handleChange}
                             onBlur={handleBlur}
                             value={values.password}
                             id="standard-adornment-password"
-                            //   type={values.showPassword ? 'text' : 'password'}
+                            type={values.showPassword ? 'text' : 'password'}
                             onChange={handleChange('password')}
                             endAdornment={
                                 <InputAdornment position="end">
@@ -135,63 +116,15 @@ export const SignUp = () => {
                                         onClick={handleClickShowPassword}
                                         onMouseDown={handleMouseDownPassword}
                                     >
-                                        {/* {values.showPassword ? <Visibility /> : <VisibilityOff />} */}
+                                        {values.showPassword ? <Visibility /> : <VisibilityOff />}
                                     </IconButton>
                                 </InputAdornment>
                             }
                         />
                         {errors.password && touched.password && errors.password}
-                        <div>Your password must contain:</div>
-                        {/* <img src={CheckoutIcon} /> */}
-                        <div>
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                // fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill={color[0]}
-                            >
-                                <path
-                                    d="M22.8 12C22.8 17.9647 17.9647 22.8 12 22.8C6.03532 22.8 1.2 17.9647 1.2 12C1.2 6.03532 6.03532 1.2 12 1.2C17.9647 1.2 22.8 6.03532 22.8 12Z"
-                                    strokeWidth="2.4"
-                                />
-                                <path
-                                    d="M19.2 7.20001L9.70745 16.2L4.8 11.1595"
-                                    stroke={`${color[1]}`}
-                                    strokeWidth="2.4"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            Atleast 6 characters
-                        </div>
-                        <div>
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                // fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill={color[0]}
-                            >
-                                <path
-                                    d="M22.8 12C22.8 17.9647 17.9647 22.8 12 22.8C6.03532 22.8 1.2 17.9647 1.2 12C1.2 6.03532 6.03532 1.2 12 1.2C17.9647 1.2 22.8 6.03532 22.8 12Z"
-                                    strokeWidth="2.4"
-                                />
-                                <path
-                                    d="M19.2 7.20001L9.70745 16.2L4.8 11.1595"
-                                    stroke={`${color[1]}`}
-                                    strokeWidth="2.4"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            Contain a number
-                        </div>
-                        {/* <img src={CheckoutIcon} /> */}
+                        <div>Forgot password?</div>
                         <button type="submit" disabled={isSubmitting}>
-                            Sign Up
+                            Login
                         </button>
                     </form>
                 )}
@@ -199,3 +132,7 @@ export const SignUp = () => {
         </div>
     );
 };
+
+function setSubmitting(arg0: boolean) {
+    throw new Error('Function not implemented.');
+}

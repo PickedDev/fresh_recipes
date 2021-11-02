@@ -1,8 +1,8 @@
 import React from 'react';
-// import styles from './footer.module.css';
 import { Link } from 'react-router-dom';
+import { useStyles } from './styles';
 
-// const classNames = require('classnames');
-export const Footer = () => (
-  <footer className="footer"> &#169;Copyright 2021 Fresh Recipes</footer>
-);
+export const Footer = () => {
+    const classes = useStyles();
+    return <footer className={classes.footer}> &#169;Copyright 2021 Fresh Recipes</footer>;
+};
