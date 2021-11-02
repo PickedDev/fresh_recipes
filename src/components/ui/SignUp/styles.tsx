@@ -76,9 +76,9 @@ export const useStyles = makeStyles((theme?: any) =>
             fontWeight: 900,
             color: '#fff',
             borderRadius: '10px',
-            transition: 'color .3s backgroundColor .3s',
+            transition: 'color .3s, background .3s',
             '&:hover': {
-                backgroundColor: 'transparent',
+                background: 'transparent',
                 color: '#51D496',
             },
         },
