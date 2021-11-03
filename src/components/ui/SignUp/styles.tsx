@@ -1,10 +1,4 @@
 import { makeStyles, createStyles } from '@material-ui/core';
-import { flexbox } from '@mui/system';
-
-const color = {
-    grey: '#9FA5C0',
-    green: '#51D496',
-};
 
 export const useStyles = makeStyles((theme?: any) =>
     createStyles({
@@ -39,12 +33,9 @@ export const useStyles = makeStyles((theme?: any) =>
             margin: '0 0 20px 0',
         },
         inputWrapper: {
-            // display: 'flex',
-            // justifyContent: 'center',
-            // alignItems: 'center',
             padding: '0 10px',
             backgroundColor: '#fff',
-            border: '3px solid #51D496',
+            borderBottom: '2px solid #51D496',
             borderRadius: '10px',
             margin: '0 0 30px 0',
             '&:last-child': {
@@ -52,7 +43,6 @@ export const useStyles = makeStyles((theme?: any) =>
             },
         },
         iconEye: {
-            // margin: '10px',
             color: '#51D496',
         },
         inputs: {
@@ -63,7 +53,6 @@ export const useStyles = makeStyles((theme?: any) =>
         InputWrapperImg: {
             width: '25px',
             height: '20px',
-            // margin: '0  0 0 10px ',
         },
         requirmentsPassword: {
             fontSize: '18px',
@@ -73,6 +62,12 @@ export const useStyles = makeStyles((theme?: any) =>
             display: 'flex',
             justifyContent: 'center',
             margin: '0 0 10px 0',
+            '&:last-child': {
+                margin: '0',
+            },
+        },
+        requimentsWrapper: {
+            margin: '0 0 30px 0',
         },
         requirmentsImg: {
             margin: '0 17px 0 0',

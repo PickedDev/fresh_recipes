@@ -69,7 +69,6 @@ const useStyles = makeStyles((theme: Theme) =>
             color: '#000000',
             padding: '10px 0 0',
             transition: 'color 0.3s',
-            overflow: ' hidden',
         },
         textItem: {
             display: 'flex',

@@ -1,36 +1,15 @@
 import React from 'react';
-import { Dialog } from '@material-ui/core';
-import InputLabel from '@material-ui/core/InputLabel';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
-import Input from '@material-ui/core/Input';
 import InputBase from '@material-ui/core/InputBase';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
-import TextField from '@material-ui/core/TextField';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import { Formik, Form, Field, ErrorMessage, FormikHelpers } from 'formik';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import Box from '@mui/material/Box';
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { useStyles } from './styles';
-import passwordClock from '../../img/passwordClock.jpg';
-import sandClock from '../../img/sandClock.jpg';
-
-const green = '#51D496';
-
-function HomeIcon(props: SvgIconProps) {
-    return (
-        <SvgIcon {...props}>
-            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
-        </SvgIcon>
-    );
-}
-
-const color = ['black', '#2DBECD'];
+import passwordClock from '../../img/password.svg';
+import sandClock from '../../img/sand.svg';
+import blue from '../../img/checkblue.svg';
+import grey from '../../img/checkgrey.svg';
 
 export const SignUp = () => {
     const classes = useStyles();
@@ -44,7 +23,6 @@ export const SignUp = () => {
         event.preventDefault();
     };
 
-    const [name, setName] = React.useState('Composed TextField');
     return (
         <div className={classes.container}>
             <div className={classes.formWrapper}>
@@ -72,7 +50,6 @@ export const SignUp = () => {
                                     }
                                 />
                             </FormControl>
-
                             <FormControl variant="standard" className={classes.inputWrapper}>
                                 <InputBase
                                     id="outlined-adornment-password"
@@ -110,56 +87,16 @@ export const SignUp = () => {
                         <div className={classes.requirmentsPassword}>
                             Your password must contain:
                         </div>
-                        {/* <img src={CheckoutIcon} /> */}
-                        <div className={classes.requirments}>
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                // fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill={color[0]}
-                                className={classes.requirmentsImg}
-                            >
-                                <path
-                                    d="M22.8 12C22.8 17.9647 17.9647 22.8 12 22.8C6.03532 22.8 1.2 17.9647 1.2 12C1.2 6.03532 6.03532 1.2 12 1.2C17.9647 1.2 22.8 6.03532 22.8 12Z"
-                                    strokeWidth="2.4"
-                                />
-                                <path
-                                    d="M19.2 7.20001L9.70745 16.2L4.8 11.1595"
-                                    stroke={`${color[1]}`}
-                                    strokeWidth="2.4"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            Atleast 6 characters
+                        <div className={classes.requimentsWrapper}>
+                            <div className={classes.requirments}>
+                                <img src={blue} alt={blue} className={classes.requirmentsImg} />
+                                Atleast 6 characters
+                            </div>
+                            <div className={classes.requirments}>
+                                <img src={grey} alt={grey} className={classes.requirmentsImg} />
+                                Contain a number
+                            </div>
                         </div>
-                        <div className={classes.requirments}>
-                            <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                // fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill={color[0]}
-                                className={classes.requirmentsImg}
-                            >
-                                <path
-                                    d="M22.8 12C22.8 17.9647 17.9647 22.8 12 22.8C6.03532 22.8 1.2 17.9647 1.2 12C1.2 6.03532 6.03532 1.2 12 1.2C17.9647 1.2 22.8 6.03532 22.8 12Z"
-                                    strokeWidth="2.4"
-                                />
-                                <path
-                                    d="M19.2 7.20001L9.70745 16.2L4.8 11.1595"
-                                    stroke={`${color[1]}`}
-                                    strokeWidth="2.4"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                            Contain a number
-                        </div>
-                        {/* <img src={CheckoutIcon} /> */}
                         <button type="submit" className={classes.formBtn}>
                             Sign Up
                         </button>
