@@ -40,24 +40,6 @@ export const SignUp = () => {
         showPassword: false,
     });
 
-    // const handleChange = (prop: any) => (event: any) => {
-    //     setValues({ ...values, [prop]: event.target.value });
-    // };
-    // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     setName(event.target.value);
-    // };
-
-    // const handleChange = (prop: keyof State) => (event: React.ChangeEvent<HTMLInputElement>) => {
-    //     setValues({ ...values, [prop]: event.target.value });
-    // };
-
-    // const handleClickShowPassword = () => {
-    //     setValues({
-    //         ...values,
-    //         showPassword: !values.showPassword,
-    //     });
-    // };
-
     const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
         event.preventDefault();
     };
@@ -76,8 +58,6 @@ export const SignUp = () => {
                     </div>
                     <form className={classes.form}>
                         <div className={classes.inputs}>
-                            {/* <div className={classes.inputWrapper}> */}
-
                             <FormControl variant="standard" className={classes.inputWrapper}>
                                 <InputBase
                                     id="input-with-icon-adornment"
@@ -93,13 +73,10 @@ export const SignUp = () => {
                                 />
                             </FormControl>
 
-                            {/* </div> */}
-
                             <FormControl variant="standard" className={classes.inputWrapper}>
                                 <InputBase
                                     id="outlined-adornment-password"
                                     type={values.showPassword ? 'text' : 'password'}
-                                    // component="<AccountCircle />"
                                     startAdornment={
                                         <InputAdornment position="start">
                                             <img
@@ -116,7 +93,6 @@ export const SignUp = () => {
                                                     className={classes.iconEye}
                                                     aria-label="toggle password visibility"
                                                     edge="end"
-                                                    // color="info"
                                                 >
                                                     {values.showPassword ? (
                                                         <VisibilityOff />
