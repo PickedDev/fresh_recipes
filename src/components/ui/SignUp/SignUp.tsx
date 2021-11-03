@@ -19,8 +19,11 @@ export const SignUp = () => {
         showPassword: false,
     });
 
-    const handleMouseDownPassword = (event: React.MouseEvent<HTMLButtonElement>) => {
-        event.preventDefault();
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
     };
 
     return (
@@ -70,6 +73,7 @@ export const SignUp = () => {
                                                     className={classes.iconEye}
                                                     aria-label="toggle password visibility"
                                                     edge="end"
+                                                    onClick={handleClickShowPassword}
                                                 >
                                                     {values.showPassword ? (
                                                         <VisibilityOff />
