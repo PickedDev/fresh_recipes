@@ -3,6 +3,7 @@ import { flexbox } from '@mui/system';
 
 const color = {
     grey: '#9FA5C0',
+    green: '#51D496',
 };
 
 export const useStyles = makeStyles((theme?: any) =>
@@ -38,23 +39,31 @@ export const useStyles = makeStyles((theme?: any) =>
             margin: '0 0 20px 0',
         },
         inputWrapper: {
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            // display: 'flex',
+            // justifyContent: 'center',
+            // alignItems: 'center',
+            padding: '0 10px',
             backgroundColor: '#fff',
+            border: '3px solid #51D496',
             borderRadius: '10px',
             margin: '0 0 30px 0',
             '&:last-child': {
                 margin: '0',
             },
         },
+        iconEye: {
+            // margin: '10px',
+            color: '#51D496',
+        },
         inputs: {
             margin: '0 0 17px 0',
+            display: 'flex',
+            flexDirection: 'column',
         },
         InputWrapperImg: {
-            width: '20px',
+            width: '25px',
             height: '20px',
-            margin: '0 20px 0 0 ',
+            // margin: '0  0 0 10px ',
         },
         requirmentsPassword: {
             fontSize: '18px',
