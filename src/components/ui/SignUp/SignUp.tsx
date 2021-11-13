@@ -1,23 +1,30 @@
-import React, { useState } from 'react';
-import { Formik, FormikHelpers, FormikProps, Form, Field } from 'formik';
-import * as yup from 'yup';
-import { Container, Typography, Grid, Button, Box } from '@material-ui/core';
-import { FormTextField } from './FormTextField';
+import React from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import InputBase from '@material-ui/core/InputBase';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import FormControl from '@material-ui/core/FormControl';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { useStyles } from './styles';
-import passwordClock from '../../img/passwordClock.jpg';
-import sandClock from '../../img/sandClock.jpg';
-
-interface FormValues {
-    name: string;
-    password: string;
-}
-const validationSchema = yup.object().shape({
-    name: yup.string().required('Required'),
-    password: yup.string().required('Required'),
-});
+import passwordClock from '../../img/password.svg';
+import sandClock from '../../img/sand.svg';
+import blue from '../../img/checkblue.svg';
+import grey from '../../img/checkgrey.svg';
 
 export const SignUp = () => {
     const classes = useStyles();
+    const [values, setValues] = React.useState({
+        email: '',
+        password: '',
+        showPassword: false,
+    });
+
+    const handleClickShowPassword = () => {
+        setValues({
+            ...values,
+            showPassword: !values.showPassword,
+        });
+    };
 
     return (
         <div className={classes.container}>
@@ -30,54 +37,74 @@ export const SignUp = () => {
                             Please enter your accounts here
                         </span>
                     </div>
-                    <Formik
-                        initialValues={{
-                            name: '',
-                            password: '',
-                        }}
-                        validationSchema={validationSchema}
-                        onSubmit={(
-                            values: FormValues,
-                            formikHelpers: FormikHelpers<FormValues>
-                        ) => {
-                            alert(JSON.stringify(values, null, 2));
-                            formikHelpers.setSubmitting(false);
-                        }}
-                    >
-                        {(formikProps: FormikProps<FormValues>) => (
-                            <Form noValidate autoComplete="off">
-                                <Grid container spacing={2}>
-                                    <Grid item xs={12}>
-                                        <Field
-                                            name="name"
-                                            label="Name"
-                                            size="small"
-                                            component={FormTextField}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <Field
-                                            name="password"
-                                            label="password"
-                                            size="small"
-                                            component={FormTextField}
-                                        />
-                                    </Grid>
-                                    <Grid item xs={12}>
-                                        <Button
-                                            type="submit"
-                                            variant="outlined"
-                                            size="large"
-                                            color="primary"
-                                            disabled={formikProps.isSubmitting}
-                                        >
-                                            Sign Up
-                                        </Button>
-                                    </Grid>
-                                </Grid>
-                            </Form>
-                        )}
-                    </Formik>
+                    <form className={classes.form}>
+                        <div className={classes.inputs}>
+                            <FormControl variant="standard" className={classes.inputWrapper}>
+                                <InputBase
+                                    id="input-with-icon-adornment"
+                                    startAdornment={
+                                        <InputAdornment position="start">
+                                            <img
+                                                src={sandClock}
+                                                alt={sandClock}
+                                                className={classes.InputWrapperImg}
+                                            />
+                                        </InputAdornment>
+                                    }
+                                />
+                            </FormControl>
+                            <FormControl variant="standard" className={classes.inputWrapper}>
+                                <InputBase
+                                    id="outlined-adornment-password"
+                                    type={values.showPassword ? 'text' : 'password'}
+                                    startAdornment={
+                                        <InputAdornment position="start">
+                                            <img
+                                                src={passwordClock}
+                                                alt={passwordClock}
+                                                className={classes.InputWrapperImg}
+                                            />
+                                        </InputAdornment>
+                                    }
+                                    endAdornment={
+                                        <>
+                                            <InputAdornment position="end">
+                                                <IconButton
+                                                    className={classes.iconEye}
+                                                    aria-label="toggle password visibility"
+                                                    edge="end"
+                                                    onClick={handleClickShowPassword}
+                                                >
+                                                    {values.showPassword ? (
+                                                        <VisibilityOff />
+                                                    ) : (
+                                                        <Visibility />
+                                                    )}
+                                                </IconButton>
+                                            </InputAdornment>
+                                        </>
+                                    }
+                                />
+                            </FormControl>
+                        </div>
+
+                        <div className={classes.requirmentsPassword}>
+                            Your password must contain:
+                        </div>
+                        <div className={classes.requimentsWrapper}>
+                            <div className={classes.requirments}>
+                                <img src={blue} alt={blue} className={classes.requirmentsImg} />
+                                Atleast 6 characters
+                            </div>
+                            <div className={classes.requirments}>
+                                <img src={grey} alt={grey} className={classes.requirmentsImg} />
+                                Contain a number
+                            </div>
+                        </div>
+                        <button type="submit" className={classes.formBtn}>
+                            Sign Up
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

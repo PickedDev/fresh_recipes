@@ -14,8 +14,8 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Link from '@material-ui/core/Link';
-import sandClock from '../../img/sandClock.jpg';
-import passwordClock from '../../img/passwordClock.jpg';
+import sandClock from '../../img/sand.svg';
+import passwordClock from '../../img/password.svg';
 import { useStyles } from './styles';
 
 export const SignIn = () => {
