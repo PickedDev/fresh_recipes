@@ -5,7 +5,7 @@ import { Recipe } from '../components/ui/Recipe/Recipe';
 import { RecipeNew } from '../components/ui/RecipeNew';
 import { RecipeEdit } from '../components/ui/RecipeEdit';
 import { Header } from '../components/ui/Header/Header';
-import { Footer } from '../components/ui/Footer/Footer';
+import { Footer } from '../components/ui/footer/Footer';
 
 const pages = [
     {

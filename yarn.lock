@@ -1198,6 +1198,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.7.6":
+  version "7.16.3"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.16.3.tgz#b86f0db02a04187a3c17caa77de69840165d42d5"
+  integrity sha512-WBwekcqacdY2e9AF/Q7WLFUWmdJGJTkbjqTjoMDgXkVZ3ZRUvOPsLb5KdwISoQVsbP+DQzVZW4Zhci0DvpbNTQ==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.10.4", "@babel/template@^7.15.4", "@babel/template@^7.3.3":
   version "7.15.4"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.15.4.tgz#51898d35dcf3faa670c4ee6afcfd517ee139f194"
@@ -6483,6 +6490,13 @@ history@^4.9.0:
     tiny-warning "^1.0.0"
     value-equal "^1.0.1"
 
+history@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/history/-/history-5.1.0.tgz#2e93c09c064194d38d52ed62afd0afc9d9b01ece"
+  integrity sha512-zPuQgPacm2vH2xdORvGGz1wQMuHSIB56yNAy5FnLuwOwgSYyPKptJtcMm6Ev+hRGeS+GzhbmRacHzvlESbFwDg==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+
 hmac-drbg@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/hmac-drbg/-/hmac-drbg-1.0.1.tgz#d2745701025a6c775a6c545793ed502fc0c649a1"
@@ -10931,6 +10945,11 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+
+react-hook-form@^7.19.5:
+  version "7.19.5"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.19.5.tgz#cc6087419facf2fb57d47d5b0d4a8ca63201298f"
+  integrity sha512-+M9gd0nWWASuEitf5PQGOGNElnHknzY3rGISrPDXwsOmZb7c/jyvkRUqk4OJXaZit1ZwesSv+EysttdAeFEfmw==
 
 react-icons@^4.3.1:
   version "4.3.1"
