@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { RecipeBox } from '../RecipeBox/RecipeBox';
+import { RecipeBox } from '../../components/RecipeBox/RecipeBox';
 import { useStyles } from './styles';
 
 export const Home = (props: any) => {

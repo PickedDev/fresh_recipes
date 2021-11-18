@@ -1,11 +1,16 @@
-import { Home } from '../components/ui/Home/Home';
-import { SignIn } from '../components/ui/SignIn/SignIn';
-import { SignUp } from '../components/ui/SignUp/SignUp';
-import { Recipe } from '../components/ui/Recipe/Recipe';
-import { RecipeNew } from '../components/ui/RecipeNew';
-import { RecipeEdit } from '../components/ui/RecipeEdit';
-import { Header } from '../components/ui/Header/Header';
-import { Footer } from '../components/ui/footer/Footer';
+import { Home } from '../pages/Home/Home';
+import { SignIn } from '../pages/SignIn/SignIn';
+import { SignUp } from '../pages/SignUp/SignUp';
+import { Recipe } from '../pages/Recipe/Recipe';
+import { RecipeNew } from '../pages/RecipeNew';
+import { RecipeEdit } from '../pages/RecipeEdit';
+import { Header } from '../pages/Header/Header';
+import { Footer } from '../components/footer/Footer';
+
+/*
+    TO DO
+    1. Update imports
+*/
 
 const pages = [
     {
