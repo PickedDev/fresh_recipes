@@ -26,6 +26,7 @@ export const Authform = () => {
         1. Create separate component for inputs (with BaseSyntheticEvent for onChange value)
         2. Add all fields to Controller component 
         3. Add proper props to Authform
+        Saved for later reference
     */
 
     return (
