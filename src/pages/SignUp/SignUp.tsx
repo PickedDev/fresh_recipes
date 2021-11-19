@@ -6,10 +6,10 @@ import FormControl from '@material-ui/core/FormControl';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import { useStyles } from './styles';
-import passwordClock from '../../img/password.svg';
-import sandClock from '../../img/sand.svg';
-import blue from '../../img/checkblue.svg';
-import grey from '../../img/checkgrey.svg';
+import passwordClock from '../../assets/img/password.svg';
+import sandClock from '../../assets/img/sand.svg';
+import blue from '../../assets/img/checkblue.svg';
+import grey from '../../assets/img/checkgrey.svg';
 
 export const SignUp = () => {
     const classes = useStyles();

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import Time from '../../img/time.svg';
-import Dish from '../../img/dish.svg';
+import Time from '../../assets/img/time.svg';
+import Dish from '../../assets/img/dish.svg';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({

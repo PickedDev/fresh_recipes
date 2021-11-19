@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Button, TextField } from '@material-ui/core';
 import { v4 as uiId } from 'uuid';
-import Time from '../img/time.svg';
+import Time from '../../assets/img/time.svg';
 import { useStyles } from './styles';
 
 export const RecipeNewForm = (props: any) => {

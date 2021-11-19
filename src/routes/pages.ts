@@ -4,7 +4,7 @@ import { SignUp } from '../pages/SignUp/SignUp';
 import { Recipe } from '../pages/Recipe/Recipe';
 import { RecipeNew } from '../pages/RecipeNew';
 import { RecipeEdit } from '../pages/RecipeEdit';
-import { Header } from '../pages/Header/Header';
+import { Header } from '../components/Header/Header';
 import { Footer } from '../components/footer/Footer';
 
 /*
