@@ -47,9 +47,9 @@ export const Recipe = (props: any) => {
                     </div>
                     <div className={classes.Item}>
                         <span className={classes.ItemTitle}>Время готовки (в минутах)</span>
-                        <div className={classes.ItemDescription}>
+                        <div className={classes.ItemDescriptionImg}>
                             <img src={Time} alt="" className={classes.images} />
-                            <span> {recipe.time}</span>
+                            <span className={classes.time}> {recipe.time} мин</span>
                         </div>
                     </div>
                     <div className={classes.Item}>
@@ -57,7 +57,7 @@ export const Recipe = (props: any) => {
                         <div className={classes.ItemLists}>
                             {recipe.ingridients.map((x, index) => (
                                 <span className={classes.ingridients}>
-                                    {index + 1} . {x}
+                                    {index + 1}. {x}
                                 </span>
                             ))}
                         </div>
@@ -76,12 +76,10 @@ export const Recipe = (props: any) => {
                     <div className={classes.heading}> Приятного апетита!</div>
                     <div className={classes.buttons}>
                         <Button color="primary" className={classes.btnDelete}>
-                            {' '}
-                            Удалить рецепт{' '}
+                            Удалить рецепт
                         </Button>
                         <Button color="primary" className={classes.btn}>
-                            {' '}
-                            Редактировать рецепт{' '}
+                            Редактировать рецепт
                         </Button>
                     </div>
                 </div>

@@ -62,7 +62,17 @@ export const useStyles = makeStyles((theme?: any) =>
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            fontWeight: 500,
             // textAlign: 'center',
+        },
+        ItemDescriptionImg: {
+            display: 'flex',
+            padding: '30px 0',
+            alignItems: 'center',
+            // justifyContent: 'center',
+        },
+        textItemContent: {
+            fontSize: '17px',
         },
         images: {
             padding: '0 30px 0 0',
@@ -86,8 +96,9 @@ export const useStyles = makeStyles((theme?: any) =>
             background: '#3E5481',
             color: '#FFFFFF',
             padding: '5px 10px',
-            margin: '0 6px 0 0',
+            margin: '0 12px 0 0',
             borderRadius: '12px',
+            fontWeight: 'bold',
         },
         heading: {
             fontSize: '35px',
@@ -95,6 +106,7 @@ export const useStyles = makeStyles((theme?: any) =>
             lineHeight: '1.2',
             padding: '30px 0',
             textAlign: 'center',
+            letterSpacing: '0.007em',
         },
         buttons: {
             display: 'flex',
@@ -107,6 +119,8 @@ export const useStyles = makeStyles((theme?: any) =>
             fontWeight: 700,
             textTransform: 'inherit',
             margin: '0 10px 0 0',
+            width: '50%',
+            borderRadius: '20px',
             '&:hover': {
                 background: '#51D496',
                 color: '#fff',
@@ -117,7 +131,12 @@ export const useStyles = makeStyles((theme?: any) =>
             color: '#fff',
             fontWeight: 700,
             textTransform: 'inherit',
-            margin: '0 10px 0 0',
+            margin: '0 25px 0 0',
+            width: '50%',
+            borderRadius: '20px',
+        },
+        time: {
+            fontWeight: 500,
         },
     })
 );
