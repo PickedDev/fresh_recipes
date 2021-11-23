@@ -2,8 +2,10 @@ import React from 'react';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import { Button, TextField } from '@material-ui/core';
 import { v4 as uiId } from 'uuid';
+import OutlinedInput from '@mui/material/OutlinedInput';
 import Time from '../../assets/img/time.svg';
 import { useStyles } from './styles';
+import SliderComponent from './SliderComponent';
 
 export const RecipeNewForm = (props: any) => {
     const classes = useStyles();
@@ -66,50 +68,39 @@ export const RecipeNewForm = (props: any) => {
                 <h1 className={classes.title}>Добавить новый рецепт</h1>
                 <div className={classes.formInner}>
                     <div className={classes.Item}>
+                        <span className={classes.ItemTitle}>Поменять фото рецепта</span>
+                    </div>
+                    <div className={classes.Item}>
                         <span className={classes.ItemTitle}>Название рецепта</span>
-                        <div className={classes.ItemDescription}>input</div>
+                        <div className={classes.ItemDescription}>
+                            <OutlinedInput
+                                style={{ borderRadius: 32 }}
+                                fullWidth
+                                placeholder="Enter food name"
+                                id="outlined-basic"
+                                className={classes.ItemText}
+                            />
+                        </div>
                     </div>
                     <div className={classes.Item}>
                         <span className={classes.ItemTitle}>Описание</span>
-                        <div className={classes.ItemDescription}>input</div>
+                        <div className={classes.ItemDescription}>
+                            <TextField
+                                // style={{ borderRadius: 32 }}
+                                variant="outlined"
+                                fullWidth
+                                rows={2}
+                                rowsMax={10}
+                                multiline
+                                placeholder="Tell a little about your food"
+                                // id="outlined-basic"
+                                className={classes.ItemText}
+                            />
+                        </div>
                     </div>
                     <div className={classes.Item}>
                         <span className={classes.ItemTitle}>Время готовки (в минутах)</span>
-                        <div className={classes.ItemDescription}>
-                            {/* <div className={classes.root}>
-                                    <Typography id="input-slider" gutterBottom>
-                                        Volume
-                                    </Typography>
-                                    <Grid container spacing={2} alignItems="center">
-                                        <Grid item>
-                                        <VolumeUp />
-                                        </Grid>
-                                        <Grid item xs>
-                                        <Slider
-                                            value={typeof value === 'number' ? value : 0}
-                                            onChange={handleSliderChange}
-                                            aria-labelledby="input-slider"
-                                        />
-                                        </Grid>
-                                        <Grid item>
-                                        <Input
-                                            className={classes.input}
-                                            value={value}
-                                            margin="dense"
-                                            onChange={handleInputChange}
-                                            onBlur={handleBlur}
-                                            inputProps={{
-                                            step: 10,
-                                            min: 0,
-                                            max: 100,
-                                            type: 'number',
-                                            'aria-labelledby': 'input-slider',
-                                            }}
-                                        />
-                                        </Grid>
-                                    </Grid>
-                                </div>*/}
-                        </div>
+                        <SliderComponent />
                     </div>
                     <div className={classes.Item}>
                         <span className={classes.ItemTitleIngr}>Ингридиенты</span>

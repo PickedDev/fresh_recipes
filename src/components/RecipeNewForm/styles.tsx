@@ -49,11 +49,15 @@ export const useStyles = makeStyles((theme?: any) =>
         Item: {
             margin: '0 0 10px 0',
         },
+        sliderData: {
+            display: 'flex',
+            justifyContent: 'space-between',
+        },
         ItemTitle: {
             background: '#C4C4C4',
             border: '1px solid #000000',
             display: 'block',
-            padding: '10px 0 10px 15px',
+            padding: '6px 0 8px 15px',
             fontWeight: 700,
             color: '#3E5481',
         },
@@ -67,11 +71,17 @@ export const useStyles = makeStyles((theme?: any) =>
             justifyContent: 'space-between',
         },
         ItemDescription: {
-            padding: '30px 0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            padding: '22px 0 0 0',
+            borderRadius: '8px',
+            // display: 'flex',
+            // justifyContent: 'center',
+            // alignItems: 'center',
             // textAlign: 'center',
+        },
+        ItemText: {
+            background: '#fff',
+            borderRadius: '4px',
+            // border: '1px solid #D0DBEA',
         },
         images: {
             padding: '0 30px 0 0',
@@ -140,6 +150,20 @@ export const useStyles = makeStyles((theme?: any) =>
         textField: {
             marginTop: '1em',
             width: '80%',
+        },
+        minValue: {
+            color: '#1FCC79',
+            fontWeight: 'bold',
+            fontSize: '15px',
+        },
+        maxValue: {
+            color: '#3E5480',
+            fontWeight: 'bold',
+            fontSize: '15px',
+        },
+        sliderValue: {
+            display: 'flex',
+            textAlign: 'center',
         },
     })
 );
