@@ -165,5 +165,23 @@ export const useStyles = makeStyles((theme?: any) =>
             display: 'flex',
             textAlign: 'center',
         },
+        CurrentValue: {
+            width: '20px',
+            fontWeight: 'bold',
+
+            color: '#1FCC79',
+            '&:value': {
+                color: '#1FCC79',
+            },
+        },
+
+        // root: {
+        //     '&$disabled $notchedOutline': {
+        //         borderColor: 'orange',
+        //     },
+        // },
+        // notchedOutline: {
+        //     border: 'none',
+        // },
     })
 );

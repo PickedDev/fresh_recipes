@@ -1,4 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 import pages from './pages';
 
 /*
@@ -11,7 +12,7 @@ import pages from './pages';
 const Routes = () => (
     <Switch>
         {pages.map((page: any) => (
-            <Route path={page.path} component={page.component} exact />
+            <Route path={page.path} component={page.component} exact key={uuidv4()} />
         ))}
     </Switch>
 );

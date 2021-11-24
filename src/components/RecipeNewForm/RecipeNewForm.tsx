@@ -89,8 +89,8 @@ export const RecipeNewForm = (props: any) => {
                                 // style={{ borderRadius: 32 }}
                                 variant="outlined"
                                 fullWidth
-                                rows={2}
-                                rowsMax={10}
+                                minRows={2}
+                                maxRows={10}
                                 multiline
                                 placeholder="Tell a little about your food"
                                 // id="outlined-basic"
