@@ -26,11 +26,18 @@ export default function Instructions() {
             <div className={classes.ItemList}>
                 {stepsList.map((ingridient, index) => (
                     <div key={uiId()} className={classes.MappedListItem}>
-                        <TextField
-                            className={classes.textField}
-                            label="Напишите ингридиент..."
-                            variant="outlined"
-                        />
+                        <span className={classes.ListIndex}>{index + 1}</span>
+                        <div className={classes.ItemInput}>
+                            <TextField
+                                variant="outlined"
+                                fullWidth
+                                minRows={4}
+                                maxRows={10}
+                                multiline
+                                placeholder="Tell a little about your food"
+                                className={classes.ItemText}
+                            />
+                        </div>
                         <span className={classes.ActionBtn}>
                             <svg
                                 width="24"

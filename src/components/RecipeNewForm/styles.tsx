@@ -87,7 +87,7 @@ export const useStyles = makeStyles((theme?: any) =>
             padding: '0 30px 0 0',
         },
         ActionBtn: {
-            marginTop: '2em',
+            // marginTop: '2em',
         },
         ingridients: {
             color: '#000',
@@ -106,9 +106,13 @@ export const useStyles = makeStyles((theme?: any) =>
         },
         MappedListItem: {
             display: 'flex',
-            flexDirection: 'row',
+            alignItems: 'center',
             justifyContent: 'space-between',
             paddingTop: '1em',
+        },
+        ItemInput: {
+            flex: '1',
+            margin: '0 20px 0 0',
         },
         Numbers: {
             background: '#3E5481',
@@ -174,7 +178,19 @@ export const useStyles = makeStyles((theme?: any) =>
                 color: '#1FCC79',
             },
         },
-
+        ListIndex: {
+            color: '#fff',
+            width: '23px',
+            height: '23px',
+            backgroundColor: '#3E5481',
+            borderRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 7px 0 0',
+            fontWeight: 'bold',
+            fontSize: '12px',
+        },
         // root: {
         //     '&$disabled $notchedOutline': {
         //         borderColor: 'orange',
