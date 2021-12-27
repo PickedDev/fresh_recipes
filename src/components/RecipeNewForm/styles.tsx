@@ -49,11 +49,15 @@ export const useStyles = makeStyles((theme?: any) =>
         Item: {
             margin: '0 0 10px 0',
         },
+        sliderData: {
+            display: 'flex',
+            justifyContent: 'space-between',
+        },
         ItemTitle: {
             background: '#C4C4C4',
             border: '1px solid #000000',
             display: 'block',
-            padding: '10px 0 10px 15px',
+            padding: '6px 0 8px 15px',
             fontWeight: 700,
             color: '#3E5481',
         },
@@ -67,17 +71,23 @@ export const useStyles = makeStyles((theme?: any) =>
             justifyContent: 'space-between',
         },
         ItemDescription: {
-            padding: '30px 0',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
+            padding: '22px 0 0 0',
+            borderRadius: '8px',
+            // display: 'flex',
+            // justifyContent: 'center',
+            // alignItems: 'center',
             // textAlign: 'center',
+        },
+        ItemText: {
+            background: '#fff',
+            borderRadius: '4px',
+            // border: '1px solid #D0DBEA',
         },
         images: {
             padding: '0 30px 0 0',
         },
         ActionBtn: {
-            marginTop: '2em',
+            // marginTop: '2em',
         },
         ingridients: {
             color: '#000',
@@ -96,9 +106,13 @@ export const useStyles = makeStyles((theme?: any) =>
         },
         MappedListItem: {
             display: 'flex',
-            flexDirection: 'row',
+            alignItems: 'center',
             justifyContent: 'space-between',
             paddingTop: '1em',
+        },
+        ItemInput: {
+            flex: '1',
+            margin: '0 20px 0 0',
         },
         Numbers: {
             background: '#3E5481',
@@ -141,5 +155,49 @@ export const useStyles = makeStyles((theme?: any) =>
             marginTop: '1em',
             width: '80%',
         },
+        minValue: {
+            color: '#1FCC79',
+            fontWeight: 'bold',
+            fontSize: '15px',
+        },
+        maxValue: {
+            color: '#3E5480',
+            fontWeight: 'bold',
+            fontSize: '15px',
+        },
+        sliderValue: {
+            display: 'flex',
+            textAlign: 'center',
+        },
+        CurrentValue: {
+            width: '20px',
+            fontWeight: 'bold',
+
+            color: '#1FCC79',
+            '&:value': {
+                color: '#1FCC79',
+            },
+        },
+        ListIndex: {
+            color: '#fff',
+            width: '23px',
+            height: '23px',
+            backgroundColor: '#3E5481',
+            borderRadius: '12px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            margin: '0 7px 0 0',
+            fontWeight: 'bold',
+            fontSize: '12px',
+        },
+        // root: {
+        //     '&$disabled $notchedOutline': {
+        //         borderColor: 'orange',
+        //     },
+        // },
+        // notchedOutline: {
+        //     border: 'none',
+        // },
     })
 );
